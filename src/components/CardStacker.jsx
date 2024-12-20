@@ -1,10 +1,11 @@
 import Card from "./Card.jsx";
 
-const CardStacker = ({ cardArray }) => {
+const CardStacker = ({ cardArray, onHandleShow }) => {
     return (
         <div className="flex card-stacker">
             {cardArray.map((card, index) => (
                 <Card
+                    onHandleShow={onHandleShow}
                     key={index}
                     title={card.title}
                     subtitle={card.subtitle}

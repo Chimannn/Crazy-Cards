@@ -1,32 +1,17 @@
 import bg from "../assets/bg.png";
 
-const Card = ({
-    title,
-    subtitle,
-    rating,
-    backgroundColors,
-    image,
-    className,
-    onHandleShow,
-}) => {
+const CardModel = ({ title, subtitle, rating, backgroundColors, image }) => {
     const { top, bottom } = backgroundColors;
-
-    const handleClick = () => {
-        onHandleShow(subtitle);
-    };
-
     return (
         <div
             className={
-                "card flex flex-col justify-center p-5 rounded-[10%] relative text-white overflow-hidden h-fit w-hit z-10 hover:-translate-y-10 transition-all duration-300 ease-in-out " +
-                className
+                "card flex absolute flex-col justify-center p-5 rounded-[10%] text-white overflow-hidden h-96 w-80  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             }
             style={{
                 background: `linear-gradient(to bottom, ${top}, ${bottom})`,
             }}
-            onClick={handleClick}
         >
-            <div className="inset-0 absolute z-0">
+            <div className="inset-0 absolute z-20">
                 <img
                     src={bg}
                     alt="bg"
@@ -62,4 +47,4 @@ const Card = ({
     );
 };
 
-export default Card;
+export default CardModel;
