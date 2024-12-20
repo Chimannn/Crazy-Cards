@@ -1,17 +1,31 @@
-import bg from "../assets/bg.png"
+import bg from "../assets/bg.png";
 
-const Card = ({title, subtitle, rating, backgroundColors, image, className}) => {
-    const { top , bottom } = backgroundColors
-    
+const Card = ({
+    title,
+    subtitle,
+    rating,
+    backgroundColors,
+    image,
+    className,
+}) => {
+    const { top, bottom } = backgroundColors;
+
     return (
-        <div 
-            className={"card flex flex-col justify-center p-5 rounded-[10%] relative text-white overflow-hidden h-fit w-hit z-10 hover:-translate-y-10 transition-all duration-300 ease-in-out " + className}
+        <div
+            className={
+                "card flex flex-col justify-center p-5 rounded-[10%] relative text-white overflow-hidden h-fit w-hit z-10 hover:-translate-y-10 transition-all duration-300 ease-in-out " +
+                className
+            }
             style={{
-                background: `linear-gradient(to bottom, ${top}, ${bottom})`
+                background: `linear-gradient(to bottom, ${top}, ${bottom})`,
             }}
         >
             <div className="inset-0 absolute z-0">
-                <img src={bg} alt="bg" className="w-full h-full object-cover opacity-10" />
+                <img
+                    src={bg}
+                    alt="bg"
+                    className="w-full h-full object-cover opacity-10"
+                />
             </div>
             <div className="flex items-center justify-between z-10">
                 <div>
@@ -33,13 +47,13 @@ const Card = ({title, subtitle, rating, backgroundColors, image, className}) => 
                     <p className="text-xs">{rating}</p>
                 </div>
             </div>
-            <img 
+            <img
                 src={image}
-                alt={title} 
+                alt={title}
                 className="w-52 h-52 object-contain mt-5 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] mx-5 mb-7"
             />
         </div>
-    )
-}
+    );
+};
 
-export default Card
+export default Card;
